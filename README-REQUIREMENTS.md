@@ -1,17 +1,17 @@
 # Title of Project
 
-## Table of Contents
-- Description
-- Installation
-- Usage
-- Contributing
-- Tests
-- License
-- Questions
-
+license
 
 ## Description
 User's description input here.
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
 
 ## Installation
 User's installation instructions input here.
