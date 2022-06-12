@@ -9,6 +9,7 @@ const questions = [
     "What is the title of your project?",
     "Please write a description of the project.",
     "Please input the installation instructions.",
+    "Please explain the usage of your application.",
     "Who contributed in this project?",
     "Please input test instructions here.",
     "Please choose the license that your application is covered under from the following.",
@@ -46,34 +47,39 @@ function init() {
     },
     {
         type: "input",
-        name: "contributers",
+        name: "usage",
         message: questions[4]
     },
     {
         type: "input",
-        name: "test",
+        name: "contributers",
         message: questions[5]
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: questions[6]
     },
     {
         type: "list",
         name: "license",
-        message: questions[6],
+        message: questions[7],
         // choices: ["", "", "", "", "", ""] // input choices
     },
     {
         type: "input",
         name: "username",
-        message: questions[7]
-    },
-    {
-        type: "input",
-        name: "email",
         message: questions[8]
     },
     {
         type: "input",
-        name: "reach",
+        name: "email",
         message: questions[9]
+    },
+    {
+        type: "input",
+        name: "reach",
+        message: questions[10]
     }
 
 ])
