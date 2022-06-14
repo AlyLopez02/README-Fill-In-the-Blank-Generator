@@ -64,7 +64,16 @@ function init() {
         type: "list",
         name: "license",
         message: questions[7],
-        // choices: ["", "", "", "", "", ""] // input choices
+        choices: [
+            "MIT License", 
+            "Mozilla Public License 2.0", 
+            "Apache License 2.0", 
+            "Boost Software License 1.0", 
+            "GNU AGPLv3", 
+            "GNU GPLv3",
+            "The Unlicense",
+            "N/A"
+        ]
     },
     {
         type: "input",
@@ -84,7 +93,7 @@ function init() {
 
 ])
 .then(
-
+    
 )
 
 }

@@ -27,6 +27,7 @@ User's contribution guidlines input here.
 User's test instructions input here.
 
 ## License
+
 After user chooses license from a list of options, then a notice is made here. It explains which license this application is covered under.
 
 ## Questions
