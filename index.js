@@ -18,9 +18,14 @@ const questions = [
     "How should you be reached if someone has additional questions?"];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     fs.writeFile("project.md", md);
-// }
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), function(err){
+        if (err) {
+            console.log('error')
+        }
+    })
+    };
+
 
 // TODO: Create a function to initialize app
 function init() {
@@ -92,9 +97,14 @@ function init() {
     }
 
 ])
-.then(
-    
-)
+.then(function(data){
+    console.log(data);
+
+    const fileName = data.title.replace(" ", "-").toLowerCase() + ".md";
+
+    console.log(fileName);
+    writeToFile(fileName, data)
+})
 
 }
 

@@ -1,19 +1,19 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) { 
-  if (data.license === "MIT License"){
+  if (license === "MIT License"){
     return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-  } else if (data.license === "Mozilla Public License 2.0") {
+  } else if (license === "Mozilla Public License 2.0") {
     return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
-  } else if (data.license === "Apache License 2.0"){
+  } else if (license === "Apache License 2.0"){
     return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
-  } else if (data.license === "Boost Software License 1.0") {
+  } else if (license === "Boost Software License 1.0") {
     return "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
-  } else if (data.license === "GNU AGPLv3") {
+  } else if (license === "GNU AGPLv3") {
     return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
-  } else if (data.license === "GNU GPLv3") {
+  } else if (license === "GNU GPLv3") {
     return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-  } else if (data.license === "The Unlicense") {
+  } else if (license === "The Unlicense") {
     return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
   } else {
     return "";
@@ -23,19 +23,19 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (data.license === "MIT License"){
+  if (license === "MIT License"){
     return `Link: [https://choosealicense.com/licenses/mit/](https://choosealicense.com/licenses/mit/)`;
-  } else if (data.license === "Mozilla Public License 2.0") {
+  } else if (license === "Mozilla Public License 2.0") {
     return `Link: [http://mozilla.org/MPL/2.0/](http://mozilla.org/MPL/2.0/)`;
-  } else if (data.license === "Apache License 2.0"){
+  } else if (license === "Apache License 2.0"){
     return `Link: [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)`;
-  } else if (data.license === "Boost Software License 1.0") {
+  } else if (license === "Boost Software License 1.0") {
     return `Link: [https://choosealicense.com/licenses/bsl-1.0/](https://choosealicense.com/licenses/bsl-1.0/)`;
-  } else if (data.license === "GNU AGPLv3") {
+  } else if (license === "GNU AGPLv3") {
     return `Link: [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/)`;
-  } else if (data.license === "GNU GPLv3") {
+  } else if (license === "GNU GPLv3") {
     return `Link: [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/)`;
-  } else if (data.license === "The Unlicense") {
+  } else if (license === "The Unlicense") {
     return `Link: [https://unlicense.org](https://unlicense.org)`;
   } else {
     return "";
@@ -44,11 +44,11 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(data) {
   if (data.license === "MIT License"){
     return `MIT License
 
-    Copyright (c) 2022 ${data.fullname}
+    Copyright (c) 2022 ${data.name}
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -73,7 +73,7 @@ function renderLicenseSection(license) {
     License, v. 2.0. If a copy of the MPL was not distributed with this
     file, You can obtain one at http://mozilla.org/MPL/2.0/.`;
   } else if (data.license === "Apache License 2.0"){
-    return `Copyright 2022 ${data.fullname}
+    return `Copyright 2022 ${data.name}
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -111,7 +111,7 @@ function renderLicenseSection(license) {
     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
     DEALINGS IN THE SOFTWARE.`;
   } else if (data.license === "GNU AGPLv3") {
-    return ` Copyright (C) 2022  ${data.fullname}
+    return ` Copyright (C) 2022  ${data.name}
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published
@@ -126,7 +126,7 @@ function renderLicenseSection(license) {
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.`;
   } else if (data.license === "GNU GPLv3") {
-    return ` Copyright (C) 2002  ${data.fullname}
+    return ` Copyright (C) 2002  ${data.name}
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -177,7 +177,7 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-${renderLicenseBadge(license)}
+${renderLicenseBadge(data.license)}
 
 ## Description
 ${data.description}
@@ -206,9 +206,9 @@ ${data.tests}
 ### ${data.license}
 
 
-${renderLicenseSection(license)}
+${renderLicenseSection(data)}
 
-${renderLicenseLink(license)}
+${renderLicenseLink(data)}
 
 
 ## Questions
@@ -218,6 +218,7 @@ Link to GitHub Profile: [https://github.com/${data.username}](https://github.com
 
 
 Email: ${data.email}
+
 Reach Out Instructions:
 ${data.reach}
 
