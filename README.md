@@ -27,4 +27,4 @@ Here is the link to the walkthrough video of application:
 
 <a href="https://watch.screencastify.com/v/YSqXtfzvDIa6tB1RBDT9">https://watch.screencastify.com/v/YSqXtfzvDIa6tB1RBDT9</a>
 
-The file named "number-generator.md" is the example README file created in this video.
+The file named "number-generator.md" is the sample README file created in this video. It was created with placeholder information.
