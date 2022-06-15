@@ -18,7 +18,8 @@ const questions = [
     "How should you be reached if someone has additional questions?"];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+// creates a README file with the returned string from generateMarkdown function that it called
+function writeToFile(fileName, data) { 
     fs.writeFile(fileName, generateMarkdown(data), function(err){
         if (err) {
             console.log('error')
@@ -29,7 +30,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt([
+    inquirer.prompt([  //takes user input
     {
         type: "input",
         name: "name",
@@ -97,7 +98,7 @@ function init() {
     }
 
 ])
-.then(function(data){
+.then(function(data){  //creates file name and calls the writeToFile function
     console.log(data);
 
     const fileName = data.title.replace(" ", "-").toLowerCase() + ".md";
